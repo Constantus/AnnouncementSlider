@@ -1,6 +1,7 @@
-//window.onresize = () => { location.reload();} ;
+window.onresize = () => { location.reload();} ;
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.getElementsByClassName("slideItem");
+const slideCount = carouselImages.length;
 
 // Buttons
 const prevBtn = document.querySelector('#prevBtn');
@@ -8,6 +9,15 @@ const nextBtn = document.querySelector('#nextBtn');
 
 let counter = 1;
 const size = carouselImages[0].clientWidth;
+
+// Create Slide Indicators
+const buttonsDiv = document.querySelector('#controlBtns');
+let newBtn;
+for (let i = 0; i < (slideCount - 2); i++) {
+    newBtn = document.createElement('span');
+    newBtn.className += 'controlBtn';
+    buttonsDiv.appendChild(newBtn);
+}
 
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 

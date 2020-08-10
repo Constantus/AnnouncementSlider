@@ -17,7 +17,22 @@
     height: 500px;
 }
 
-.carousel-slide img {
+.carousel-slide div {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.slideImgWrapper {
+    position: relative;
+    padding-top: 100%;
+}
+
+.slideImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: auto;
 }

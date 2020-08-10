@@ -1,6 +1,6 @@
-window.onresize = () => { location.reload();} ;
+//window.onresize = () => { location.reload();} ;
 const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
+const carouselImages = document.getElementsByClassName("slideItem");
 
 // Buttons
 const prevBtn = document.querySelector('#prevBtn');

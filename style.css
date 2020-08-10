@@ -17,7 +17,7 @@
     height: 500px;
 }
 
-.carousel-slide div {
+.slideItem {
     min-width: 100%;
     min-height: 100%;
 }

@@ -33,7 +33,11 @@ function buildSlideIndicators() {
     }
 }
 
-window.onresize = () => { location.reload();} ;
+function updateSize() {
+    size = carouselImages[0].clientWidth + 5;
+}
+
+window.onresize = () => { updateSize()};
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.getElementsByClassName("slideItem");
 const slideCount = carouselImages.length;
@@ -43,7 +47,8 @@ const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
 let counter = 1;
-const size = carouselImages[0].clientWidth + 5;
+let size;
+updateSize();
 
 // Create Slide Indicators
 const buttonsDiv = document.querySelector('#controlBtns');

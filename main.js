@@ -37,12 +37,19 @@ function buildSlideIndicators() {
 
 function updateSize() {
     size = carouselImages[0].clientWidth + 5;
+    if (counter >= 0 && counter <= (slideCount - 2)) {
+        carouselSlide.style.transition = "transform 0.4s ease-in-out";
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        updateIndicators();
+    } else {
+        console.log('ERROR! Slide indicators not working as expected!');
+    }
 }
 
-window.onresize = () => { updateSize()};
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.getElementsByClassName("slideItem");
 const slideCount = carouselImages.length;
+window.onresize = () => { updateSize()};
 
 // Buttons
 const prevBtn = document.querySelector('#prevBtn');
@@ -55,8 +62,7 @@ const buttonsDiv = document.querySelector('#controlBtns');
 buildSlideIndicators();
 const slideIndicators = document.getElementsByClassName('controlBtn');
 
-let size;
-updateSize();
+let size = carouselImages[0].clientWidth + 5;
 updateIndicators();
 
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';

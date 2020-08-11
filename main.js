@@ -43,7 +43,7 @@ const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
 let counter = 1;
-const size = carouselImages[0].clientWidth;
+const size = carouselImages[0].clientWidth + 5;
 
 // Create Slide Indicators
 const buttonsDiv = document.querySelector('#controlBtns');

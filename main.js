@@ -1,7 +1,9 @@
 function updateIndicators() {
     for (let i = 0; i < slideIndicators.length; i++) {
         if (i === (counter - 1)) {
-            slideIndicators[i].className += ' active';
+            if (!slideIndicators[i].classList.contains('active')){
+                slideIndicators[i].className += ' active';
+            }
         } else {
             slideIndicators[i].className = slideIndicators[i].className.replace(' active', '');
         }
@@ -47,15 +49,15 @@ const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
 let counter = 1;
-let size;
-updateSize();
 
 // Create Slide Indicators
 const buttonsDiv = document.querySelector('#controlBtns');
 buildSlideIndicators();
 const slideIndicators = document.getElementsByClassName('controlBtn');
-updateIndicators();
 
+let size;
+updateSize();
+updateIndicators();
 
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 for (let i = 0; i < slideIndicators.length; i++) {

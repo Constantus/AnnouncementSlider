@@ -13,16 +13,18 @@ function updateIndicators() {
 function nextSlide() {
     if (counter >= carouselImages.length - 1) return;
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    let slideSize = carouselImages[counter - 1].clientWidth + 5;
     counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    carouselSlide.style.transform = 'translateX(' + (-slideSize * counter) + 'px)';
     updateIndicators();
 }
 
 function prevSlide() {
     if (counter <= 0) return;
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    let slideSize = carouselImages[counter - 1].clientWidth + 5;
     counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    carouselSlide.style.transform = 'translateX(' + (-slideSize * counter) + 'px)';
     updateIndicators();
 }
 

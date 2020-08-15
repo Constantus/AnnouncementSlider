@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6, p {
     right: 0;
     bottom: 0;
     object-fit: cover;
+    max-width: 100%;
 }
 
 #prevBtn, #nextBtn {
